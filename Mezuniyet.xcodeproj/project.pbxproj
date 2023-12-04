@@ -15,6 +15,7 @@
 		70E7AC452B1B5ED500D921D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70E7AC432B1B5ED500D921D0 /* LaunchScreen.storyboard */; };
 		70E7AC4D2B1DEDE800D921D0 /* DataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E7AC4C2B1DEDE800D921D0 /* DataClass.swift */; };
 		70E7AC532B1E467800D921D0 /* jsonFile.json in Resources */ = {isa = PBXBuildFile; fileRef = 70E7AC522B1E467800D921D0 /* jsonFile.json */; };
+		70E7AC552B1E814C00D921D0 /* HaritaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E7AC542B1E814C00D921D0 /* HaritaVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		70E7AC462B1B5ED500D921D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		70E7AC4C2B1DEDE800D921D0 /* DataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataClass.swift; sourceTree = "<group>"; };
 		70E7AC522B1E467800D921D0 /* jsonFile.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = jsonFile.json; sourceTree = "<group>"; };
+		70E7AC542B1E814C00D921D0 /* HaritaVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaritaVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				70E7AC462B1B5ED500D921D0 /* Info.plist */,
 				70E7AC4C2B1DEDE800D921D0 /* DataClass.swift */,
 				70E7AC522B1E467800D921D0 /* jsonFile.json */,
+				70E7AC542B1E814C00D921D0 /* HaritaVC.swift */,
 			);
 			path = Mezuniyet;
 			sourceTree = "<group>";
@@ -146,6 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				70E7AC3D2B1B5ED400D921D0 /* ViewController.swift in Sources */,
+				70E7AC552B1E814C00D921D0 /* HaritaVC.swift in Sources */,
 				70E7AC392B1B5ED400D921D0 /* AppDelegate.swift in Sources */,
 				70E7AC4D2B1DEDE800D921D0 /* DataClass.swift in Sources */,
 				70E7AC3B2B1B5ED400D921D0 /* SceneDelegate.swift in Sources */,

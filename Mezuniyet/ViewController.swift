@@ -8,7 +8,15 @@
 import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+    
+    var bigdata : Array<DataClass.Hastane> = []
+    
+    var selectedData : Array<DataClass.Hastane> = []
 
+    
+//    var selectedisim    = ""
+//    var selectedenlem   = 0
+//    var selectedboylam  = 0
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -19,19 +27,32 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.dataSource = self
         
         let obj = DataClass()
-//        obj.getJsonData()
-        obj.getJsonFile()
-        
+
+        let data = obj.getJsonFile()
+        self.bigdata = data!
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return 10
+        return self.bigdata.count
         }
 
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             let cell = UITableViewCell()
-            cell.textLabel?.text = "test"
+            cell.textLabel?.text = self.bigdata[indexPath.row].ADI
             return cell
         }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toHaritaVC" {
+            let destinationVC = segue.destination as! HaritaVC
+            
+        }
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        self.selectedData = [bigdata[indexPath.row]]
+        
+        performSegue(withIdentifier: "toHaritaVC", sender: nil)
+    }
 
 }
 

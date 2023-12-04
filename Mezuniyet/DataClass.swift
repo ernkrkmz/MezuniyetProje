@@ -29,7 +29,7 @@ class DataClass{
         
     }
     
-    func getJsonFile() {
+    func getJsonFile() -> Array<Hastane>?{
         let decoder = JSONDecoder()
         let url = Bundle.main.path(forResource: "jsonFile", ofType:"json")
         
@@ -38,12 +38,13 @@ class DataClass{
                     let fileUrl = URL(fileURLWithPath: filePath)
                     let data = try Data(contentsOf: fileUrl)
                     let decodedData = try JSONDecoder().decode([Hastane].self, from: data)
-                    print(decodedData.first?.ADI)
+                    return decodedData
                 }
             } catch {
                 print("error: \(error)")
+                
             }
-        
+        return nil
     }
     
     
