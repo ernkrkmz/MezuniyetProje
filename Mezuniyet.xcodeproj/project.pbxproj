@@ -13,6 +13,8 @@
 		70E7AC402B1B5ED400D921D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70E7AC3E2B1B5ED400D921D0 /* Main.storyboard */; };
 		70E7AC422B1B5ED500D921D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70E7AC412B1B5ED500D921D0 /* Assets.xcassets */; };
 		70E7AC452B1B5ED500D921D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70E7AC432B1B5ED500D921D0 /* LaunchScreen.storyboard */; };
+		70E7AC4D2B1DEDE800D921D0 /* DataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E7AC4C2B1DEDE800D921D0 /* DataClass.swift */; };
+		70E7AC532B1E467800D921D0 /* jsonFile.json in Resources */ = {isa = PBXBuildFile; fileRef = 70E7AC522B1E467800D921D0 /* jsonFile.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		70E7AC412B1B5ED500D921D0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		70E7AC442B1B5ED500D921D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		70E7AC462B1B5ED500D921D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		70E7AC4C2B1DEDE800D921D0 /* DataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataClass.swift; sourceTree = "<group>"; };
+		70E7AC522B1E467800D921D0 /* jsonFile.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = jsonFile.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 				70E7AC412B1B5ED500D921D0 /* Assets.xcassets */,
 				70E7AC432B1B5ED500D921D0 /* LaunchScreen.storyboard */,
 				70E7AC462B1B5ED500D921D0 /* Info.plist */,
+				70E7AC4C2B1DEDE800D921D0 /* DataClass.swift */,
+				70E7AC522B1E467800D921D0 /* jsonFile.json */,
 			);
 			path = Mezuniyet;
 			sourceTree = "<group>";
@@ -128,6 +134,7 @@
 				70E7AC452B1B5ED500D921D0 /* LaunchScreen.storyboard in Resources */,
 				70E7AC422B1B5ED500D921D0 /* Assets.xcassets in Resources */,
 				70E7AC402B1B5ED400D921D0 /* Main.storyboard in Resources */,
+				70E7AC532B1E467800D921D0 /* jsonFile.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,6 +147,7 @@
 			files = (
 				70E7AC3D2B1B5ED400D921D0 /* ViewController.swift in Sources */,
 				70E7AC392B1B5ED400D921D0 /* AppDelegate.swift in Sources */,
+				70E7AC4D2B1DEDE800D921D0 /* DataClass.swift in Sources */,
 				70E7AC3B2B1B5ED400D921D0 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
