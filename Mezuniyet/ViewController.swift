@@ -44,6 +44,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toHaritaVC" {
             let destinationVC = segue.destination as! HaritaVC
+            destinationVC.gelenData = selectedData
             
         }
     }

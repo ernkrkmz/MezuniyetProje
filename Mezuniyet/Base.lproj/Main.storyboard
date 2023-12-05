@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <capability name="Map view configurations" minToolsVersion="14.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -53,37 +54,26 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="enlem" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="smY-bC-ExT">
-                                <rect key="frame" x="16" y="147" width="361" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="boylam" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zZe-NG-fEB">
-                                <rect key="frame" x="16" y="189" width="361" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="742-7J-RZG">
+                                <rect key="frame" x="0.0" y="155" width="393" height="633"/>
+                                <standardMapConfiguration key="preferredConfiguration"/>
+                            </mapView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="H0T-KI-WRU"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="smY-bC-ExT" firstAttribute="top" secondItem="oR0-6q-EP4" secondAttribute="bottom" constant="21" id="5bB-he-x1a"/>
-                            <constraint firstItem="oR0-6q-EP4" firstAttribute="leading" secondItem="smY-bC-ExT" secondAttribute="leading" id="9xv-bD-R6a"/>
-                            <constraint firstItem="oR0-6q-EP4" firstAttribute="trailing" secondItem="smY-bC-ExT" secondAttribute="trailing" id="M6O-iM-q1M"/>
-                            <constraint firstItem="oR0-6q-EP4" firstAttribute="top" secondItem="H0T-KI-WRU" secondAttribute="top" constant="105" id="OBu-Fg-ey2"/>
-                            <constraint firstItem="zZe-NG-fEB" firstAttribute="top" secondItem="smY-bC-ExT" secondAttribute="bottom" constant="21" id="Sdv-fh-ah5"/>
-                            <constraint firstItem="smY-bC-ExT" firstAttribute="trailing" secondItem="zZe-NG-fEB" secondAttribute="trailing" id="Yli-pD-TjQ"/>
-                            <constraint firstItem="oR0-6q-EP4" firstAttribute="trailing" secondItem="D6i-gj-Esz" secondAttribute="trailingMargin" id="fGG-bA-M26"/>
-                            <constraint firstItem="oR0-6q-EP4" firstAttribute="leading" secondItem="D6i-gj-Esz" secondAttribute="leadingMargin" id="ivf-xn-5UM"/>
-                            <constraint firstItem="smY-bC-ExT" firstAttribute="leading" secondItem="zZe-NG-fEB" secondAttribute="leading" id="uoH-bg-rPL"/>
+                            <constraint firstItem="H0T-KI-WRU" firstAttribute="bottom" secondItem="742-7J-RZG" secondAttribute="bottom" constant="54" id="Bqa-H5-fgk"/>
+                            <constraint firstItem="oR0-6q-EP4" firstAttribute="trailing" secondItem="D6i-gj-Esz" secondAttribute="trailingMargin" id="Lgv-Dp-YgB"/>
+                            <constraint firstItem="742-7J-RZG" firstAttribute="leading" secondItem="H0T-KI-WRU" secondAttribute="leading" id="ODM-mY-4UL"/>
+                            <constraint firstItem="oR0-6q-EP4" firstAttribute="top" secondItem="H0T-KI-WRU" secondAttribute="top" constant="105" id="S6J-Wp-lOa"/>
+                            <constraint firstItem="oR0-6q-EP4" firstAttribute="leading" secondItem="D6i-gj-Esz" secondAttribute="leadingMargin" id="V2S-0j-zlg"/>
+                            <constraint firstItem="oR0-6q-EP4" firstAttribute="centerX" secondItem="742-7J-RZG" secondAttribute="centerX" id="qPm-tM-AUU"/>
+                            <constraint firstItem="742-7J-RZG" firstAttribute="top" secondItem="oR0-6q-EP4" secondAttribute="bottom" constant="29" id="urR-HT-9UV"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="boylamLBL" destination="zZe-NG-fEB" id="PAD-ZK-ndq"/>
-                        <outlet property="enlemLBL" destination="smY-bC-ExT" id="uLa-nh-hhf"/>
                         <outlet property="isimLBL" destination="oR0-6q-EP4" id="psh-kw-EsK"/>
+                        <outlet property="map" destination="742-7J-RZG" id="p7i-za-ix2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o0v-7u-tTN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
