@@ -30,8 +30,6 @@ class DataClass{
     }
     
     func getJsonFile() -> Array<Hastane>?{
-        let decoder = JSONDecoder()
-        let url = Bundle.main.path(forResource: "jsonFile", ofType:"json")
         
         do {
                 if let filePath = Bundle.main.path(forResource: "jsonFile", ofType: "json") {

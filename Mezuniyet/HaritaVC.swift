@@ -31,14 +31,32 @@ class HaritaVC: UIViewController , MKMapViewDelegate , CLLocationManagerDelegate
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
 
+        let gelenEnlem = gelenData.first?.ENLEM
+        let strEnlem = Double(gelenEnlem ?? "Enlem yok")
         
-        guard let coordinate = locationManager.location?.coordinate else {return }
-        let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+        let gelenBoylam = gelenData.first?.BOYLAM
+        let strboylam = Double(gelenBoylam ?? "Boylam yok")
+        
+        let location = CLLocation(latitude: strEnlem!, longitude: strboylam!)
+        let coordinateRegion = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: 7000, longitudinalMeters: 7000)
+        map.setRegion(coordinateRegion, animated: true)
+        let cordinate2d = CLLocationCoordinate2D(latitude: strEnlem!, longitude: strboylam!)
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = cordinate2d
+        annotation.title = gelenData.first?.ADI
+        annotation.subtitle = gelenData.first?.TELEFON ?? "Telefon bilgisi yok"
+        map.addAnnotation(annotation)
 
-        let reigon = MKCoordinateRegion(center: coordinate, span: span)
-        map.setRegion(reigon, animated: true)
+//        guard let coordinate = locationManager.location?.coordinate else {return }
+//        let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+//
+//        let reigon = MKCoordinateRegion(center: coordinate, span: span)
+//        map.setRegion(reigon, animated: true)
         
-        isimLBL.text = gelenData.first?.ADI
+        
+        
+        print(strEnlem)
+        isimLBL.text = gelenData.first?.ENLEM
         
     }
     
