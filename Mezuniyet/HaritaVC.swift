@@ -14,6 +14,7 @@ class HaritaVC: UIViewController , MKMapViewDelegate , CLLocationManagerDelegate
     
     var locationManager = CLLocationManager()
 
+    @IBOutlet weak var adresLBL: UILabel!
     
     var isim    = ""
     var enlem   = 0
@@ -46,20 +47,59 @@ class HaritaVC: UIViewController , MKMapViewDelegate , CLLocationManagerDelegate
         annotation.title = gelenData.first?.ADI
         annotation.subtitle = gelenData.first?.TELEFON ?? "Telefon bilgisi yok"
         map.addAnnotation(annotation)
+        
+        
+        
+        isimLBL.text = gelenData.first?.ADI
+        adresLBL.text = "Adres : \(gelenData.first?.ADRES ?? "Yok")"
+        
+    }
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        if annotation is MKUserLocation{ return nil }
+        let reuseId = "asd"
+        var pinview = map.dequeueReusableAnnotationView(withIdentifier: reuseId)
+        if pinview == nil {
+            pinview = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
+            pinview?.canShowCallout = true
+            pinview?.tintColor = .blue
+            
+            let button = UIButton(type: .infoDark)
+            pinview?.rightCalloutAccessoryView = button
+            
+        }else {
+            pinview?.annotation = annotation
+        }
+        
+        return pinview
+    }
 
-//        guard let coordinate = locationManager.location?.coordinate else {return }
-//        let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
-//
-//        let reigon = MKCoordinateRegion(center: coordinate, span: span)
-//        map.setRegion(reigon, animated: true)
+
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        
+        let gelenEnlem = gelenData.first?.ENLEM
+        let strEnlem = Double(gelenEnlem ?? "Enlem yok")
+        
+        let gelenBoylam = gelenData.first?.BOYLAM
+        let strboylam = Double(gelenBoylam ?? "Boylam yok")
         
         
-        
-        print(strEnlem)
-        isimLBL.text = gelenData.first?.ENLEM
+            var reqLocation = CLLocation(latitude: strEnlem!, longitude:strboylam!)
+
+            CLGeocoder().reverseGeocodeLocation(reqLocation) { placemarkDizisi, hata in
+                if let placemarks = placemarkDizisi {
+                    if placemarks.count > 0 {
+                        
+                        let yeniPlacemark = MKPlacemark(placemark: placemarks[0])
+                        let item = MKMapItem(placemark: yeniPlacemark)
+                        
+                        item.name = self.gelenData.first?.ADI ?? " "
+                        
+                        let launchOptions = [MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving]
+                        item.openInMaps(launchOptions: launchOptions)
+                    }
+                }
+            }
         
     }
     
-
-
 }
