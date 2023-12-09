@@ -14,10 +14,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var selectedData : Array<DataClass.Hastane> = []
     
     var ilceAdlari : Array<String> = []
+    
+    let myData = DataClass().getJsonFile()!
 
+    let filteredList : Array<String> = []
+    
     @IBOutlet weak var searchBar: UISearchBar!
     
     @IBOutlet weak var selectionButon: UIButton!
+    
+
         
     //    var selectedisim    = ""
 //    var selectedenlem   = 0
@@ -34,10 +40,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.delegate = self
         tableView.dataSource = self
         searchBar.delegate = self
-        let obj = DataClass()
-
-        let data = obj.getJsonFile()
-        self.bigdata = data!
+//        let obj = DataClass()
+//
+//        let data = obj.getJsonFile()
+        self.bigdata = myData
         var ilce_adlari = Set(bigdata.map{$0.ILCE_ADI ?? "Yok"})
 
         
@@ -87,6 +93,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         performSegue(withIdentifier: "toHaritaVC", sender: nil)
     }
-
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        print(searchText)
+        let isimler = myData.map({ $0.ADI})
+        for txt in isimler{
+            
+        }
+    }
 }
 
